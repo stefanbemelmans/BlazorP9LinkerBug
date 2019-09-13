@@ -1,0 +1,69 @@
+﻿@inherits BillOfLadingTemplateBase
+
+<div id="BillOfLadingTemplateComBolnent" class="container-fluid justify-content-around row align-items-center pt-3">
+
+  <div class="bg-info pl-4">
+    <h3>@FormData.Title</h3>
+    <div class="form-group">
+      @*<DataAnnotationsValidator />
+        <ValidationSummary />*@
+      <div class="form-row mb-3 p-2">
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Carrier" class="font-weight-bold">Carrier</label>
+          <input id="Carrier" class="form-control" placeholder="Carrier" type="text" @bind="@FormData.Carrier" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Consignee" class="font-weight-bold">Consignee:</label>
+          <input id="Consignee" type="text" class="form-control" @bind="@FormData.Consignee" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Date" class="font-weight-bold">Date</label>
+          <input id="Date" type="date" class="form-control" @bind="@FormData.Date" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Details" class="font-weight-bold">Details:</label>
+          <input id="Details" type="text" class="form-control" @bind="@FormData.Details" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Instructions" class="font-weight-bold">Instructions:</label>
+          <textarea id="Instructions" type="text" class="form-control" @bind="@FormData.Instructions" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ItemCode" class="font-weight-bold">ItemCode</label>
+          <input id="ItemCode" type="text" class="form-control" @bind="@FormData.ItemCode" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Lading" class="font-weight-bold">Lading:</label>
+          <input id="Lading" type="text" class="form-control" @bind="@FormData.Lading" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Order" class="font-weight-bold">Order:</label>
+          <input id="Order" type="text" class="form-control" @bind="@FormData.Order" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="BolPO" class="font-weight-bold">Purchase Order:</label>
+          <input id="BolPO" type="text" class="form-control" @bind="@FormData.PO" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Quantity" class="font-weight-bold">Quantity:</label>
+          <input id="Quantity" type="text" class="form-control" @bind="@FormData.Quantity" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Shipper" class="font-weight-bold">Shipper:</label>
+          <input id="Shipper" type="text" class="form-control" @bind=@FormData.Shipper />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Weight" class="font-weight-bold">Weight:</label>
+          <input id="Weight" type="text" class="form-control" @bind=@FormData.Weight />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-4 col-xl-3 text-center m-2">
+          <label for="AdditionalInformation" class="font-weight-bold">Additional Information:</label>
+          <textarea id="AdditionalInformation" type="text" class="form-control" @bind="@MutableDataString" />
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" @onclick=@SendDataToState>
+      Confirm Values
+    </button>
+  </div>
+</div>

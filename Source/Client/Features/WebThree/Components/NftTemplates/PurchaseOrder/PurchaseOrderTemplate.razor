@@ -1,0 +1,72 @@
+﻿@inherits PurchaseOrderTemplateBase
+
+<div id="PurchaseOrderTemplateComponent" class="container-fluid justify-content-around row align-items-center pt-3">
+
+  <div class="bg-info pl-4">
+    <h3>@FormData.Title</h3>
+    <div class="form-group">
+      @*<DataAnnotationsValidator />
+        <ValidationSummary />*@
+      <div class="form-row mb-3 p-2">
+
+        @*@foreach(var propName in FormData.PoFormValueNames)
+          {}*@
+
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Approver" class="font-weight-bold">Approver</label>
+          <input id="Approver" class="form-control" placeholder="Approver" type="text" @bind="@FormData.Approver" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="DeliveryDate" class="font-weight-bold">Deliver Date</label>
+          <input id="DeliveryDate" type="text" class="form-control" @bind="@FormData.DeliveryDate" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Department" class="font-weight-bold">Department:</label>
+          <input id="Department" type="text" class="form-control" @bind="@FormData.Department" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Requester" class="font-weight-bold">Requester:</label>
+          <input id="Requester" type="text" class="form-control" @bind="@FormData.Requester" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Notes" class="font-weight-bold">Requester:Notes:</label>
+          <textarea id="Notes" type="text" class="form-control" @bind="@FormData.Notes" />
+        </div>
+      </div>
+      <h3>Item Information:</h3>
+      <div class="row mb-3 p-2">
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Name" class="font-weight-bold">Item_Name</label>
+          <input id="Item_Name" type="text" class="form-control" @bind="@FormData.Item_Name" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Price" class="font-weight-bold">Item Price:</label>
+          <input id="Item_Price" type="text" class="form-control" @bind="@FormData.Item_Price" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Qty" class="font-weight-bold">Item Qty:</label>
+          <input id="Item_Qty" type="text" class="form-control" @bind="@FormData.Item_Qty" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Code" class="font-weight-bold">Item Code:</label>
+          <input id="Item_Code" type="text" class="form-control" @bind="@FormData.Item_Code" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Discount" class="font-weight-bold">Item_Discount:</label>
+          <input id="Item_Discount" type="text" class="form-control" @bind="@FormData.Item_Discount" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Item_Total" class="font-weight-bold">Item Total:</label>
+          <input id="Item_Total" type="text" class="form-control" @bind=@FormData.Item_Total />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-4 col-xl-3 text-center m-2">
+          <label for="AdditionalInformation" class="font-weight-bold">Additional Information:</label>
+          <textarea id="AdditionalInformation" type="text" class="form-control" @bind="@MutableDataString" />
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" @onclick=@SendDataToState>
+      Console Values
+    </button>
+  </div>
+</div>

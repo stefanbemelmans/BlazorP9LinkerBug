@@ -1,0 +1,32 @@
+﻿@inherits NftTypeListComponentBase
+
+<div class="bg-primary container-fluid text-center">
+  Nft Type List Here
+  <div class="align-self-center p-2 m-2">
+    <select @onchange=@SetNewNft>
+      @foreach (var template in NftDataList)
+      {
+        <option value=@template.Name>@template.Name</option>
+      }
+    </select>
+  </div>
+  <div class="d-flex justify-content-center w-50 mx-auto">
+    <div class="col m-1 text-center bg-light">
+      <p class="font-weight-bold">Nft Id:</p> @CurrentNftTemplate.NftId
+    </div>
+    <div class="col m-1 text-center bg-light">
+      <p class="font-weight-bold">Name:</p> @CurrentNftTemplate.Name
+    </div>
+    <div class="col m-1 text-center bg-light">
+      <p class="font-weight-bold">Symbol:</p> @CurrentNftTemplate.Symbol
+    </div>
+    <div class="col m-1 text-center bg-light">
+      <p class="font-weight-bold">Mint Limit:</p> @CurrentNftTemplate.MintLimit
+    </div>
+    <div class="col m-1 text-center bg-light">
+      <p class="font-weight-bold">Name:</p> @CurrentNftTemplate.AttachedTokens
+    </div>
+  </div>
+
+  @*<P9Control.Client.Features.WebThree.Components.NftTemplates.DocumentComponent NftId="@CurrentNftTemplate.NftId" />*@
+</div>

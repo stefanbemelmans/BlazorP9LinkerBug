@@ -1,0 +1,9 @@
+﻿@inherits MintingSuccessComponentBase
+<div id="MintingSuccessComponent" class="col p-2">
+  <div class="p-2 m-2 bg-info text-center">
+    <h3>Success!</h3>
+    <a href="https://rinkeby.etherscan.io/tx/?{MintingResponse.TransactionHash}">Check it out on EtherScan</a>
+    Your New Token ID is: @MintingResponse.NewTokenId
+    Gas Used: @MintingResponse.GasUsed
+  </div>
+</div>

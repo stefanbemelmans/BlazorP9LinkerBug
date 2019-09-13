@@ -1,0 +1,56 @@
+﻿@inherits RequestForProposalTemplateBase
+<div id="RequestForProposalTemplatComponent" class="container-fluid justify-content-around row align-items-center pt-3">
+
+  <div class="bg-info pl-4">
+    <h3>@FormData.Title</h3>
+    <div class="form-group">
+      @*<DataAnnotationsValidator />
+      <ValidationSummary />*@
+      <div class="form-row mb-3 p-2">
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="AcceptanceCriteria" class="font-weight-bold">Acceptance Criteria:</label>
+          <input id="AcceptanceCriteria" class="form-control" placeholder="Approver" type="text" @bind="@FormData.AcceptanceCriteria" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="AddressParcel" class="font-weight-bold">Address Parcel:</label>
+          <input id="AddressParcel" type="text" class="form-control" @bind="@FormData.AddressParcel" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Budget" class="font-weight-bold">Budget:</label>
+          <input id="Budget" type="text" class="form-control" @bind="@FormData.Budget" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="CompanyName" class="font-weight-bold">Company Name:</label>
+          <input id="CompanyName" type="text" class="form-control" @bind="@FormData.CompanyName" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ContactEmail" class="font-weight-bold">Contact Email:</label>
+          <textarea id="ContactEmail" type="email" class="form-control" @bind="@FormData.ContactEmail" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Deadline" class="font-weight-bold">Deadline:</label>
+          <input id="Deadline" type="text" class="form-control" @bind="@FormData.Deadline" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="EquivalentSubstitution" class="font-weight-bold">Equivalent Substitution:</label>
+          <input id="EquivalentSubstitution" type="text" class="form-control" @bind="@FormData.EquivalentSubstitution" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ModeOfTransport" class="font-weight-bold">Mode Of Transport:</label>
+          <input id="ModeOfTransport" type="text" class="form-control" @bind="@FormData.ModeOfTransport" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Requirement" class="font-weight-bold">Requirement:</label>
+          <input id="Requirement" type="text" class="form-control" @bind="@FormData.Requirement" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-4 col-xl-3 text-center m-2">
+          <label for="AdditionalInformation" class="font-weight-bold">Additional Information:</label>
+          <textarea id="AdditionalInformation" type="text" class="form-control" @bind="@MutableDataString" />
+        </div>
+      </div>
+    </div>
+  <button type="button" class="btn btn-primary" @onclick=@SendDataToState>
+    Send Data To State and Console
+  </button>
+  </div>
+</div>

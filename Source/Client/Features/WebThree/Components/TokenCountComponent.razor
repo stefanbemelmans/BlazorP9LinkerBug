@@ -1,0 +1,21 @@
+﻿@inherits  TokenCountComponentBase
+<div id="TokenCountContainer" class="container d-flex justify-content-center text-center bg-danger py-2">
+  <div class="bg-success text-center w-25">
+    @if (OwnedTokenIdList.Count > 0)
+    {
+    <h3> Total Docu-NFTs</h3>
+      <h4>@OwnedTokenIdList.Count</h4>
+      <select @onchange=@SetNewToken>
+        @foreach (var tokenId in OwnedTokenIdList)
+        {
+          <option value=@tokenId>Token Id: @tokenId</option>
+        }
+      </select>
+    }
+    else
+    {
+      <h3>No Tokens</h3>
+    }
+
+  </div>
+</div>

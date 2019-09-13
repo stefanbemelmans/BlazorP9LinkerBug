@@ -1,0 +1,81 @@
+﻿@inherits PurchaseRequestTemplateBase
+
+<div id="PurchaseRequestTemplateComponent" class="container-fluid justify-content-around row align-items-center pt-3">
+
+  <div class="bg-info pl-4">
+    <h3>@FormData.Title</h3>
+    <div class="form-group">
+      @*<DataAnnotationsValidator />
+        <ValidationSummary />*@
+      <div class="form-row mb-3 p-2">
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="StockNumber" class="font-weight-bold">Stock Number:</label>
+          <input id="StockNumber" class="form-control" placeholder="Approver" type="text" @bind="@FormData.StockNumber" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Description" class="font-weight-bold">Description:</label>
+          <input id="Description" type="text" class="form-control" @bind="@FormData.Description" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Qty" class="font-weight-bold">Qty:</label>
+          <input id="Qty" type="text" class="form-control" @bind="@FormData.Qty" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="UnitPrice" class="font-weight-bold">Unit Price:</label>
+          <input id="UnitPrice" type="text" class="form-control" @bind="@FormData.UnitPrice" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ExtendedCost" class="font-weight-bold">Extended Cost:</label>
+          <input id="ExtendedCost" type="text" class="form-control" @bind="@FormData.ExtendedCost" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Date" class="font-weight-bold">Deliver Date</label>
+          <input id="Date" type="date" class="form-control" @bind="@FormData.Date" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Requester" class="font-weight-bold">Requester:</label>
+          <input id="Requester" type="text" class="form-control" @bind="@FormData.Requester" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Department" class="font-weight-bold">Department:</label>
+          <input id="Department" type="text" class="form-control" @bind="@FormData.Department" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ChargeTo" class="font-weight-bold">Charge To:</label>
+          <input id="ChargeTo" type="text" class="form-control" @bind="@FormData.ChargeTo" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Vendor" class="font-weight-bold">Vendor:</label>
+          <input id="Vendor" type="text" class="form-control" @bind="@FormData.Vendor" />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="VendorContact" class="font-weight-bold">Vendor Contact:</label>
+          <input id="VendorContact" type="text" class="form-control" @bind=@FormData.VendorContact />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="VendorAddress" class="font-weight-bold">Vendor Address:</label>
+          <input id="VendorAddress" type="text" class="form-control" @bind=@FormData.VendorAddress />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="Phone" class="font-weight-bold">Phone:</label>
+          <input id="Phone" type="text" class="form-control" @bind=@FormData.Phone />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="DateNeeded" class="font-weight-bold">Date Needed:</label>
+          <input id="DateNeeded" type="date" class="form-control" @bind=@FormData.DateNeeded />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-3 col-xl-2 text-center m-2">
+          <label for="ShipVia" class="font-weight-bold">Ship Via:</label>
+          <input id="ShipVia" type="text" class="form-control" @bind=@FormData.ShipVia />
+        </div>
+        <div class="col-6 col-sm-5 col-lg-4 col-xl-3 text-center m-2">
+          <label for="AdditionalInformation" class="font-weight-bold">Additional Information:</label>
+          <textarea id="AdditionalInformation" type="text" class="form-control" @bind="@MutableDataString" />
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" @onclick=@SendDataToState>
+      Send Data To State and Console
+    </button>
+  </div>
+</div>

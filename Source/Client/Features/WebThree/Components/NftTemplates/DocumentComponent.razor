@@ -1,0 +1,45 @@
+﻿@inherits DocumentComponentBase
+
+<div>
+  @switch (NftId)
+  {
+
+    case 1:
+
+      <P9Control.Client.Features.WebThree.Components.NftTemplates.PurchaseOrder.PurchaseOrderTemplate />;
+
+      break;
+
+    case 2:
+
+      <P9Control.Client.Features.WebThree.Components.NftTemplates.PurchaseRequest.PurchaseRequestTemplate />
+
+      break;
+
+    case 3:
+
+      <P9Control.Client.Features.WebThree.Components.NftTemplates.RequestForQuotation.RequestForQuotationTemplate />;
+
+      break;
+
+    case 5:
+
+      <P9Control.Client.Features.WebThree.Components.NftTemplates.BillOfLading.BillOfLadingTemplate />;
+
+      break;
+
+    case 4:
+
+      <P9Control.Client.Features.WebThree.Components.NftTemplates.RequestForProposal.RequestForProposalTemplate />;
+
+      break;
+
+    default:
+      <div class="d-flex justify-content-center p-2 m-2 bg-info">
+
+        Please Pick an NFT!
+      </div>
+
+      break;
+  }
+</div>

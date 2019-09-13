@@ -1,0 +1,20 @@
+﻿@inherits TransactionListBase
+
+<div data-qa="@TestId">
+  <p>Current Number Of Transactions: @TransactionList.Count</p>
+  @if (TransactionList.Count > 0)
+  {
+    <div class="container">
+      @foreach (var transaction in TransactionList)
+      {
+        <div class="col bg-danger p-2 m-2">
+          <p>Transaction Amount: @transaction.Amount</p>
+          <p>Transaction Hash: @transaction.TxHash</p>
+          <p>Other Data: @transaction.OtherData</p>
+        </div>
+      }
+    </div>
+  }
+
+  <button class="btn btn-primary" @onclick="GetTransactions">Get Transactions</button>
+</div>
