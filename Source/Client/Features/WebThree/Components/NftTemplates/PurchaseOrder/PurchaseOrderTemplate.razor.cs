@@ -40,6 +40,7 @@
     public PurchaseOrderTemplateBase()
     {
       FormData.Title = "Purchase Order";
+     
     }
 
     public void ConsoleData()

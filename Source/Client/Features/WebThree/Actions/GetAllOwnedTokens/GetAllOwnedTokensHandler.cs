@@ -1,6 +1,6 @@
 ﻿namespace P9Control.Client.Features.WebThree
 {
-  using AnySerializer;
+  
   using BlazorState;
   using Microsoft.AspNetCore.Components;
   using P9Control.Client.Features.Base;
@@ -23,7 +23,7 @@
 
     public class GetAllOwnedTokensHandler : BaseHandler<GetAllOwnedTokensAction, WebThreeState>
     {
-      private readonly SerializerOptions options = 0;
+     
 
       private HttpClient HttpClient { get; }
 
@@ -83,26 +83,28 @@
         return WebThreeState;
       }
 
-      private void DeserializeAndAddData(TokenBase aOwnedToken, string aDataString)
-      {
-        if (aOwnedToken.TemplateData.NftId == 1)
-        {
-          byte[] serializedImmutableData = Convert.FromBase64String(aDataString);
+      //  Moving this function to Api to work around the cursed Mono.Cecil Linker bug
 
-          PurchaseOrderData aDeserializedObject = Serializer.Deserialize<PurchaseOrderData>(serializedImmutableData, options); // options == 0
+      //private void DeserializeAndAddData(TokenBase aOwnedToken, string aDataString)
+      //{
+      //  if (aOwnedToken.TemplateData.NftId == 1)
+      //  {
+      //    byte[] serializedImmutableData = Convert.FromBase64String(aDataString);
 
-          aOwnedToken.PurchaseOrderData = aDeserializedObject;
+      //    PurchaseOrderData aDeserializedObject = Serializer.Deserialize<PurchaseOrderData>(serializedImmutableData, options); // options == 0
 
-          // Add to StateList
-          TokenDataList.Add(aOwnedToken);
-        }
-        else
-        {
-          aOwnedToken.Data = aDataString;
+      //    aOwnedToken.PurchaseOrderData = aDeserializedObject;
 
-          TokenDataList.Add(aOwnedToken);
-        }
-      }
+      //    // Add to StateList
+      //    TokenDataList.Add(aOwnedToken);
+      //  }
+      //  else
+      //  {
+      //    aOwnedToken.Data = aDataString;
+
+      //    TokenDataList.Add(aOwnedToken);
+      //  }
+      //}
 
       private async Task<int> GetBalance(uint aToken)
       {

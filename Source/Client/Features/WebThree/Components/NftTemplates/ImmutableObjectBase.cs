@@ -3,6 +3,7 @@
   public class ImmutableObjectBase
   {
     public string Title { get; set; }
+    public uint NftId { get; set; } 
 
     public ImmutableObjectBase() { }
   }

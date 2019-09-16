@@ -5,7 +5,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="$(MediatrVersion)" />
-
+    <PackageReference Include="AnySerializer" Version="1.1.31" />
     <PackageReference Include="Nethereum.Web3" Version="$(NethereumVersion)" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
