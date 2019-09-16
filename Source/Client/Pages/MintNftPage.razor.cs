@@ -10,6 +10,7 @@
 
   public class MintNftPageBase : BaseComponent
   {
+    public const string Route = "/mintNftPage";
     public NftTemplate CurrentNftTemplate
     {
       get => WebThreeState.CurrentNftTemplate;

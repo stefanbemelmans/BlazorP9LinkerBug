@@ -1,4 +1,4 @@
-﻿namespace P9Control.Api.Features.AnySerializer.NftDataTypes.PurchaseOrder
+﻿namespace P9Control.Server.Features.AnySerializer.NftDataTypes.PurchaseOrder
 {
   using System;
 
