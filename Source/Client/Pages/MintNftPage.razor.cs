@@ -1,6 +1,6 @@
 ﻿namespace P9Control.Client.Pages
 {
-  using AnySerializer;
+  //using AnySerializer;
   using P9Control.Api.Features.WebThree;
   using P9Control.Client.Features.Base.Components;
   using P9Control.Client.Features.WebThree;
@@ -40,25 +40,25 @@
       set { }
     }
 
-    public async void MintNft()
-    {
-      ShowMintingButton = false;
-      IsMinting = true;
+    //public async void MintNft()
+    //{
+    //  ShowMintingButton = false;
+    //  IsMinting = true;
 
-      byte[] serializedImmutableObject = Serializer.Serialize(FormData);
+    //  byte[] serializedImmutableObject = Serializer.Serialize(FormData);
 
-      string serializedObjectAsBase64String = Convert.ToBase64String(serializedImmutableObject);
+    //  string serializedObjectAsBase64String = Convert.ToBase64String(serializedImmutableObject);
 
-      WebThreeState mintingResponse = await Mediator.Send(new MintNftOfTypeClientAction()
-      {
-        ImmutableDataString = serializedObjectAsBase64String,
-        MutableDataString = MutableDataString,
-        MintNftId = CurrentNftTemplate.NftId
-      });
+    //  WebThreeState mintingResponse = await Mediator.Send(new MintNftOfTypeClientAction()
+    //  {
+    //    ImmutableDataString = serializedObjectAsBase64String,
+    //    MutableDataString = MutableDataString,
+    //    MintNftId = CurrentNftTemplate.NftId
+    //  });
 
-      IsMinting = false;
-      HasMinted = true;
-    }
+    //  IsMinting = false;
+    //  HasMinted = true;
+    //}
 
     public void ToggleHasMinted()
     {

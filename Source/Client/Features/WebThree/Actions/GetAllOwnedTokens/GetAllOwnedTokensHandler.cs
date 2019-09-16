@@ -74,7 +74,7 @@
 
             string aDataString = await GetDataString(token);
 
-            DeserializeAndAddData(ownedToken, aDataString);
+            //DeserializeAndAddData(ownedToken, aDataString);
           }
           WebThreeState.TokenDataList = TokenDataList;
           WebThreeState.CurrentTokenData = TokenDataList[0];

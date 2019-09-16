@@ -37,9 +37,9 @@
       }
       @if(ShowMintingButton & FormData != null)
       {
-      <button type="button" class="btn btn-danger btn-lg mt-2 shadow" @onclick=@MintNft>
+      @*<button type="button" class="btn btn-danger btn-lg mt-2 shadow" @onclick=@MintNft>
         Mint The Bastid!
-      </button>
+      </button>*@
       }
     @if(!HasMinted){
     <P9Control.Client.Features.WebThree.Components.FormConfirmationComponent FormData="@FormData" MutableDataString="@MutableDataString" />
