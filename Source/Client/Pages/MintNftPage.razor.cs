@@ -13,13 +13,13 @@
     public const string Route = "/mintNftPage";
     public NftTemplate CurrentNftTemplate
     {
-      get => WebThreeState.CurrentNftTemplate;
+      get => OwnedNftState.CurrentNftTemplate;
       set { }
     }
 
     public ImmutableObjectBase FormData
     {
-      get => WebThreeState.ImmutableObject;
+      get => OwnedNftState.ImmutableObject;
       set { }
     }
 
@@ -28,7 +28,7 @@
 
     public string MutableDataString
     {
-      get => WebThreeState.MutableDataString;
+      get => OwnedNftState.MutableDataString;
       set { }
     }
 
@@ -37,7 +37,7 @@
     // These values are gotten in the AssetNftPageModel Init
     public uint TotalNfts
     {
-      get => WebThreeState.TotalNftTypes;
+      get => OwnedNftState.TotalNftTypes;
       set { }
     }
 

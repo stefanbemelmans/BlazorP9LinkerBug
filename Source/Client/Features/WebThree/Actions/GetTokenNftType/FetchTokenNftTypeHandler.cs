@@ -8,9 +8,9 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState 
+  internal partial class OwnedNftState 
   {
-    public class FetchTokenNftTypeClientFeaturesHandler : BaseHandler<FetchTokenNftTypeAction, WebThreeState>
+    public class FetchTokenNftTypeClientFeaturesHandler : BaseHandler<FetchTokenNftTypeAction, OwnedNftState>
     {
       private HttpClient HttpClient { get; }
 
@@ -22,13 +22,13 @@
         HttpClient = aHttpClient;
       }
 
-      public override async Task<WebThreeState> Handle
+      public override async Task<OwnedNftState> Handle
       (
         FetchTokenNftTypeAction aFetchTokenNftTypeClientRequest,
         CancellationToken aCancellationToken
       )
       {
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
         int TokenId = aFetchTokenNftTypeClientRequest.TokenId;
 
         string requestUri = GetTokenNftTypeSharedRequest.RouteFactory(TokenId);

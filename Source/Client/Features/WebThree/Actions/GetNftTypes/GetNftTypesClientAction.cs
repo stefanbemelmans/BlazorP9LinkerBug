@@ -3,7 +3,7 @@
     using MediatR;
     using P9Control.Api.Features.Base;
 
-    public class GetNftTypesClientFeaturesAction : BaseRequest, IRequest<WebThreeState>
+    public class GetNftTypesClientFeaturesAction : BaseRequest, IRequest<OwnedNftState>
     {
 
     }

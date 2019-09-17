@@ -10,9 +10,9 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState
+  internal partial class OwnedNftState
   {
-    public class ViewTokenDataHandler : BaseHandler<ViewTokenDataAction, WebThreeState>
+    public class ViewTokenDataHandler : BaseHandler<ViewTokenDataAction, OwnedNftState>
     {
       public TokenBase CurrentTokenData { get; set; }
 
@@ -23,7 +23,7 @@
         HttpClient = aHttpClient;
       }
 
-      public override async Task<WebThreeState> Handle
+      public override async Task<OwnedNftState> Handle
           (
           ViewTokenDataAction aViewTokenDataRequest,
           CancellationToken aCancellationToken
@@ -35,7 +35,7 @@
         ViewTokenDataSharedResponse DataString = await HttpClient.GetJsonAsync<ViewTokenDataSharedResponse>(ViewTokenDataSharedRequest.RouteFactory((int)TokenId));
         CurrentTokenData.Data = DataString.TokenDataString;
 
-        return new WebThreeState { CurrentTokenData = CurrentTokenData };
+        return new OwnedNftState { CurrentTokenData = CurrentTokenData };
       }
     }
   }

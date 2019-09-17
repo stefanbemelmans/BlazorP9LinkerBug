@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree
+﻿namespace P9Control.Client.Features.WebThree.Actions
 {
   using BlazorState;
   using P9Control.Client.Features.Base;
@@ -7,9 +7,9 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState : State<WebThreeState>
+  internal partial class OwnedNftState : State<OwnedNftState>
   {
-    public class ChangeCurrentTokenHandler : BaseHandler<ChangeCurrentTokenAction, WebThreeState>
+    public class ChangeCurrentTokenHandler : BaseHandler<ChangeCurrentTokenAction, OwnedNftState>
     {
       public ChangeCurrentTokenHandler
          (
@@ -18,14 +18,14 @@
       {
       }
 
-      public override Task<WebThreeState> Handle
+      public override Task<OwnedNftState> Handle
         (
           ChangeCurrentTokenAction aChangeCurrentTokenRequest,
           CancellationToken aCancellationToken
         )
       {
         int TokenId = aChangeCurrentTokenRequest.TokenId;
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
         //string requestUri = QueryHelpers.AddQueryString(GetNftByTypeSharedRequest.Route, "GetNftType", getNftId.ToString());
 
         TokenBase newSelectedToken = WebThreeState.TokenDataList.Find(token => token.TokenId == TokenId);

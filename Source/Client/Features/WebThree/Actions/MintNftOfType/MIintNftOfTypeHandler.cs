@@ -9,9 +9,9 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState : State<WebThreeState>
+  internal partial class OwnedNftState : State<OwnedNftState>
   {
-    public class MintNftOfTypeHandler : BaseHandler<MintNftOfTypeClientAction, WebThreeState>
+    public class MintNftOfTypeHandler : BaseHandler<MintNftOfTypeClientAction, OwnedNftState>
     {
       private HttpClient HttpClient { get; }
 
@@ -24,7 +24,7 @@
         HttpClient = aHttpClient;
       }
 
-      public override async Task<WebThreeState> Handle
+      public override async Task<OwnedNftState> Handle
            (
              MintNftOfTypeClientAction aMintNftClientRequest,
              CancellationToken aCancellationToken
@@ -36,7 +36,7 @@
           ImmutableDataString = aMintNftClientRequest.ImmutableDataString,
           MutableDataString = aMintNftClientRequest.MutableDataString
         };
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
         //string uri = MintNftOfTypeSharedRequest.RouteFactory((int)aMintNftClientRequest.MintNftId, aMintNftClientRequest.MutableDataString, aMintNftClientRequest.ImmutableDataString);
         MintNftOfTypeSharedResponse mintingResponse = await HttpClient.SendJsonAsync<MintNftOfTypeSharedResponse>(HttpMethod.Post, MintNftOfTypeSharedRequest.Route, mintingRequest);
 

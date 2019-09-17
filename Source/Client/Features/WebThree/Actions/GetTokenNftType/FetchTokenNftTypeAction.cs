@@ -2,7 +2,7 @@
 {
   using MediatR;
 
-  public class FetchTokenNftTypeAction : IRequest<WebThreeState>
+  public class FetchTokenNftTypeAction : IRequest<OwnedNftState>
   {
    public int TokenId { get; set; }
   }

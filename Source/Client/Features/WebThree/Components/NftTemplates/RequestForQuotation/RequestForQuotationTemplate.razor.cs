@@ -29,14 +29,14 @@
     public async void SendDataToState()
     {
       ConsoleData();
-      WebThreeState response = await Mediator.Send(new AddFormDataToStateAction()
+      OwnedNftState response = await Mediator.Send(new AddFormDataToStateAction()
       {
         FormObjectValues = FormData,
         MutableDataString = MutableDataString
       });
 
-      WebThreeState.ImmutableObject = response.ImmutableObject;
-      WebThreeState.MutableDataString = response.MutableDataString;
+      OwnedNftState.ImmutableObject = response.ImmutableObject;
+      OwnedNftState.MutableDataString = response.MutableDataString;
     }
   }
 

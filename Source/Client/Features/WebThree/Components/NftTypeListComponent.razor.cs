@@ -11,11 +11,11 @@
   {
     public NftTemplate CurrentNftTemplate
     {
-      get => WebThreeState.CurrentNftTemplate;
+      get => OwnedNftState.CurrentNftTemplate;
       set { }
     }
 
-    public List<NftTemplate> NftDataList => WebThreeState.TemplateDataList;
+    public List<NftTemplate> NftDataList => OwnedNftState.TemplateDataList;
 
     public void SetNewNft(ChangeEventArgs aEventArgs)
     {

@@ -19,13 +19,13 @@
     public static string Route = "/assetNft";
     public List<uint> OwnedTokenIdList
     {
-      get => WebThreeState.OwnedTokenIdList;
+      get => OwnedNftState.OwnedTokenIdList;
       set { }
     }
 
     public TokenBase CurrentTokenData
     {
-      get => WebThreeState.CurrentTokenData;
+      get => OwnedNftState.CurrentTokenData;
       set { }
     }
 

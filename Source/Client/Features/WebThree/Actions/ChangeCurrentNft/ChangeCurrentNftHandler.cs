@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree
+﻿namespace P9Control.Client.Features.WebThree.Actions
 {
   using BlazorState;
   using P9Control.Api.Features.WebThree;
@@ -7,9 +7,9 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState
+  internal partial class OwnedNftState
   {
-    public class ChangeCurrentNftHandler : BaseHandler<ChangeCurrentNftAction, WebThreeState>
+    public class ChangeCurrentNftHandler : BaseHandler<ChangeCurrentNftAction, OwnedNftState>
     {
       public ChangeCurrentNftHandler
          (
@@ -18,13 +18,13 @@
       {
       }
 
-      public override Task<WebThreeState> Handle
+      public override Task<OwnedNftState> Handle
         (
           ChangeCurrentNftAction aChangeCurrentNftRequest,
           CancellationToken aCancellationToken
         )
       {
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
         string templateName = aChangeCurrentNftRequest.TemplateName;
 
         //string requestUri = QueryHelpers.AddQueryString(GetNftByTypeSharedRequest.Route, "GetNftType", getNftId.ToString());

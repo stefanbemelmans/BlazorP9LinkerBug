@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree
+﻿namespace P9Control.Client.Features.WebThree.Actions
 {
   using BlazorState;
   using Microsoft.AspNetCore.Components;
@@ -6,15 +6,14 @@
   using P9Control.Api.Features.WebThree.Contracts.NftCreator.GetNftByType;
   using P9Control.Api.Features.WebThree.Contracts.NftCreator.GetNftCount;
   using P9Control.Client.Features.Base;
-  using P9Control.Client.Features.WebThree.Actions;
   using System.Collections.Generic;
   using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState
+  internal partial class OwnedNftState
   {
-    public class GetNftTypesClientFeaturesHandler : BaseHandler<GetNftTypesClientFeaturesAction, WebThreeState>
+    public class GetNftTypesClientFeaturesHandler : BaseHandler<GetNftTypesClientFeaturesAction, OwnedNftState>
     {
       //private List<KeyValuePair<uint, NftTemplate>> _TemplateList { get; set; }
       private List<NftTemplate> _TemplateList { get; set; }
@@ -30,7 +29,7 @@
         HttpClient = aHttpClient;
       }
 
-      public override async Task<WebThreeState> Handle
+      public override async Task<OwnedNftState> Handle
         (
           GetNftTypesClientFeaturesAction aGetNftTypesClientRequest,
           CancellationToken aCancellationToken
@@ -58,7 +57,7 @@
           _TemplateList.Add(template);
         }
 
-        var TemplateInfoContainer = new WebThreeState { TemplateDataList = _TemplateList };
+        var TemplateInfoContainer = new OwnedNftState { TemplateDataList = _TemplateList };
 
         TemplateInfoContainer.TotalNftTypes = aSharedResponse.NftCount;
         return TemplateInfoContainer;

@@ -1,30 +1,23 @@
-﻿namespace P9Control.Client.Features.WebThree
+﻿namespace P9Control.Client.Features.WebThree.Actions
 {
-  
   using BlazorState;
   using Microsoft.AspNetCore.Components;
-  using P9Control.Client.Features.Base;
-  using P9Control.Client.Features.WebThree.Actions.GetAllOwnedTokens;
-  using P9Control.Client.Features.WebThree.Components.NftTemplates;
-  using P9Control.Client.Features.WebThree.Components.NftTemplates.PurchaseOrder;
   using P9Control.Api.Features.WebThree;
   using P9Control.Api.Features.WebThree.Contracts.Herc1155.BalanceOf;
   using P9Control.Api.Features.WebThree.Contracts.Herc1155.GetAllOwnedTokens;
   using P9Control.Api.Features.WebThree.Contracts.Herc1155.ViewTokenData;
   using P9Control.Api.Features.WebThree.Contracts.NftCreator.GetTokenNftType;
-  using System;
+  using P9Control.Client.Features.Base;
+  using P9Control.Client.Features.WebThree.Components.NftTemplates;
   using System.Collections.Generic;
   using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class WebThreeState : State<WebThreeState>
+  internal partial class OwnedNftState
   {
-
-    public class GetAllOwnedTokensHandler : BaseHandler<GetAllOwnedTokensAction, WebThreeState>
+    public class GetAllOwnedTokensHandler : BaseHandler<GetAllOwnedTokensAction, OwnedNftState>
     {
-     
-
       private HttpClient HttpClient { get; }
 
       private List<TokenBase> TokenDataList { get; set; }
@@ -39,17 +32,17 @@
         HttpClient = aHttpClient;
       }
 
-      public override async Task<WebThreeState> Handle
+      public override async Task<OwnedNftState> Handle
         (
           GetAllOwnedTokensAction aGetAllOwnedTokensClientRequest,
           CancellationToken aCancellationToken
         )
       {
         TokenDataList = new List<TokenBase>();
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState OwnedNftState = Store.GetState<OwnedNftState>();
         GetAllOwnedTokensSharedResponse aTokenList = await HttpClient.GetJsonAsync<GetAllOwnedTokensSharedResponse>(GetAllOwnedTokensSharedRequest.Route);
 
-        WebThreeState.OwnedTokenIdList = aTokenList.TokenIdList;
+        OwnedNftState.OwnedTokenIdList = aTokenList.TokenIdList;
 
         if (aTokenList.TokenIdList.Count > 0)
         {
@@ -65,7 +58,6 @@
 
             // Get Token Nft Type Data
 
-
             // Token Balance
 
             ownedToken.Balance = await GetBalance(token);
@@ -76,9 +68,9 @@
 
             //DeserializeAndAddData(ownedToken, aDataString);
           }
-          WebThreeState.TokenDataList = TokenDataList;
-          WebThreeState.CurrentTokenData = TokenDataList[0];
-          WebThreeState.CurrentTokenNftType = WebThreeState.CurrentTokenData.TemplateData.NftId;
+          OwnedNftState.TokenDataList = TokenDataList;
+          OwnedNftState.CurrentTokenData = TokenDataList[0];
+          OwnedNftState.CurrentTokenNftType = OwnedNftState.CurrentTokenData.TemplateData.NftId;
         }
         return WebThreeState;
       }
@@ -121,7 +113,7 @@
 
       private async Task<NftTemplate> GetNft(uint aToken)
       {   // TokenNftTypeData Should already have the data in state so no need to make a service call
-        WebThreeState WebThreeState = Store.GetState<WebThreeState>();
+        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
         GetTokenNftTypeSharedResponse nftContainer = await HttpClient.GetJsonAsync<GetTokenNftTypeSharedResponse>(GetTokenNftTypeSharedRequest.RouteFactory((int)aToken));
         NftTemplate template = WebThreeState.TemplateDataList.Find(aNft => aNft.NftId == nftContainer.NftId);
         return template;
