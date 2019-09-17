@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree.Actions.ChangeCurrentToken
+﻿namespace P9Control.Client.Features.WebThree
 {
   using MediatR;
   using P9Control.Api.Features.Base;

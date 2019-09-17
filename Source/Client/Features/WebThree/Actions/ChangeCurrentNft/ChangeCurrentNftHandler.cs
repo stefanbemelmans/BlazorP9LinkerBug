@@ -1,9 +1,8 @@
-﻿namespace P9Control.Client.Features.WebThree.Actions
+﻿namespace P9Control.Client.Features.WebThree
 {
   using BlazorState;
   using P9Control.Api.Features.WebThree;
   using P9Control.Client.Features.Base;
-  using P9Control.Client.Features.WebThree.Actions.ChangeCurrentNft;
   using System.Threading;
   using System.Threading.Tasks;
 

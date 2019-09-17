@@ -16,7 +16,7 @@
     public uint NftCount { get; set; }
     public List<NftTemplate> TemplateDataList { get; set; }
     public uint TotalNftTypes { get; set; }
-
+    public MintNftState () { }
     protected override void Initialize() { }
   }
 }

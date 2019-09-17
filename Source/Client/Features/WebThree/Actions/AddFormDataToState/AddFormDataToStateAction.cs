@@ -1,5 +1,5 @@
-﻿namespace P9Control.Client.Features.WebThree.Actions.AddFormDataToState
-{
+﻿namespace P9Control.Client.Features.WebThree
+{ 
   using MediatR;
   using P9Control.Client.Features.WebThree.Components.NftTemplates;
 

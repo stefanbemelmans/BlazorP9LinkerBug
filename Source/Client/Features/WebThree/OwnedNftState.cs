@@ -13,6 +13,7 @@
     public List<uint> OwnedTokenIdList { get; set; }
     public List<TokenBase> TokenDataList { get; set; }
     public int TotalTokenTypes { get; set; }
+    public OwnedNftState() { }
     protected override void Initialize() { }
   }
 }

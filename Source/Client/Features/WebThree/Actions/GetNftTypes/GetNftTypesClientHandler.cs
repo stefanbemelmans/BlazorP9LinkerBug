@@ -6,12 +6,13 @@
   using P9Control.Api.Features.WebThree.Contracts.NftCreator.GetNftByType;
   using P9Control.Api.Features.WebThree.Contracts.NftCreator.GetNftCount;
   using P9Control.Client.Features.Base;
+  using P9Control.Client.Features.WebThree;
   using System.Collections.Generic;
   using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class OwnedNftState
+  internal partial class OwnedNftState : State<OwnedNftState>
   {
     public class GetNftTypesClientFeaturesHandler : BaseHandler<GetNftTypesClientFeaturesAction, OwnedNftState>
     {

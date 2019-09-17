@@ -1,5 +1,5 @@
-﻿namespace P9Control.Client.Features.WebThree.Actions
-{
+﻿namespace P9Control.Client.Features.WebThree
+{ 
   using BlazorState;
   using Microsoft.AspNetCore.Components;
   using P9Control.Api.Features.WebThree;

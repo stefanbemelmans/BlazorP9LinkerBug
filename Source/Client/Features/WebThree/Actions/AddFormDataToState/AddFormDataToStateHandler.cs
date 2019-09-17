@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree.Actions
+﻿namespace P9Control.Client.Features.WebThree
 {
   using BlazorState;
   using P9Control.Client.Features.Base;
@@ -7,26 +7,26 @@
   using System.Threading;
   using System.Threading.Tasks;
 
-  internal partial class OwnedNftState
+  internal partial class MintNftState : State<MintNftState>
   {
-    public class AddFormDataToStateHandler : BaseHandler<AddFormDataToStateAction, OwnedNftState>
+    public class AddFormDataToStateHandler : BaseHandler<AddFormDataToStateAction, MintNftState>
     {
       public AddFormDataToStateHandler(IStore aStore) : base(aStore) { }
 
-      public override Task<OwnedNftState> Handle
+      public override Task<MintNftState> Handle
         (
         AddFormDataToStateAction aAddFormDataToStateRequest,
         CancellationToken aCancellationToken
         )
       {
-        OwnedNftState WebThreeState = Store.GetState<OwnedNftState>();
+        MintNftState MintNftState = Store.GetState<MintNftState>();
         ImmutableObjectBase formValues = aAddFormDataToStateRequest.FormObjectValues;
 
-        WebThreeState.MutableDataString = aAddFormDataToStateRequest.MutableDataString;
-        WebThreeState.ImmutableObject = formValues;
+        MintNftState.MutableDataString = aAddFormDataToStateRequest.MutableDataString;
+        MintNftState.ImmutableObject = formValues;
 
         
-        return Task.FromResult(WebThreeState);
+        return Task.FromResult(MintNftState);
 
       }
     }

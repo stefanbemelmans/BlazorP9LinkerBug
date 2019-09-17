@@ -25,6 +25,6 @@
     internal WeatherForecastsState WeatherForecastsState => GetState<WeatherForecastsState>();
     internal MintNftState MintNftState => GetState<MintNftState>();
     internal OwnedNftState OwnedNftState => GetState<OwnedNftState>();
-    internal TransactionState TransactionState=> GetState<TransactionState>();
+    internal TransactionState TransactionState => GetState<TransactionState>();
   }
 }

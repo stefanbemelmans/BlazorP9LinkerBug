@@ -1,4 +1,4 @@
-﻿namespace P9Control.Client.Features.WebThree
+﻿namespace P9Control.Client.Features.WebThree.Actions
 {
   using BlazorState;
   using Microsoft.AspNetCore.Components;
